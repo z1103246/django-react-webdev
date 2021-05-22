@@ -27,9 +27,22 @@ const expBlocks = [
     }
 ];
 
+const skillBarBlock = {
+    skillBars: [
+        { percent: 95, name: 'React' },
+        { percent: 15, name: 'Erlang' },
+        { percent: 80, name: 'Python' },
+        { percent: 95, name: 'React' },
+        { percent: 15, name: 'Erlang' },
+        { percent: 80, name: 'Python' }
+    ],
+    faIcon: 'code',
+    name: 'Programming Skills'
+};
+
 ReactDOM.render(
     <React.StrictMode>
-        <Resume expBlocks={expBlocks} />
+        <Resume expBlocks={expBlocks} skillBarBlock={skillBarBlock} />
     </React.StrictMode>,
     document.getElementById('root')
 );
