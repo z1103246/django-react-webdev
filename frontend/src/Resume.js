@@ -1,6 +1,7 @@
 import React from 'react';
 import ExpBlock from './ExpBlock';
 import SkillBarBlock from './SkillBarBlock';
+import SkillPieBlock from './SkillPieBlock';
 
 class Resume extends React.Component {
     render() {
@@ -8,6 +9,7 @@ class Resume extends React.Component {
             <ExpBlock expBlock={expBlock} />
         );
         const skillBarBlock = <SkillBarBlock skillBarBlock={this.props.skillBarBlock} />;
+        const skillPieBlock = <SkillPieBlock skillPieBlock={this.props.skillPieBlock} />;
 
         return (
             <div className="resume">
@@ -16,6 +18,7 @@ class Resume extends React.Component {
                 <div className="func">
                     {expBlocks}
                     {skillBarBlock}
+                    {skillPieBlock}
                 </div>
             </div>
         );

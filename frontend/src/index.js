@@ -40,9 +40,20 @@ const skillBarBlock = {
     name: 'Programming Skills'
 };
 
+const skillPieBlock = {
+    skillPies: [
+        { percent: 50, name: 'React' },
+        { percent: 60, name: 'Erlang' },
+        { percent: 70, name: 'Python' },
+        { percent: 95, name: 'React' }
+    ],
+    faIcon: 'keyboard',
+    name: 'Software Skills'
+};
+
 ReactDOM.render(
     <React.StrictMode>
-        <Resume expBlocks={expBlocks} skillBarBlock={skillBarBlock} />
+        <Resume expBlocks={expBlocks} skillBarBlock={skillBarBlock} skillPieBlock={skillPieBlock} />
     </React.StrictMode>,
     document.getElementById('root')
 );
