@@ -361,10 +361,10 @@ h3 {
   position: absolute;
   top: -1px;
   height: 4px;
-  // width: 0%;
   background: $orange;
   box-shadow: 0 0 0 $orange;
   border-radius: 5px;
+  transition-duration: 0.3s;
 }
 .resume .func .skills-soft {
   clear: both;
@@ -383,6 +383,7 @@ h3 {
 .resume .func .skills-soft ul li:hover svg .cbar {
   stroke: $yellow;
   stroke-width: 4px;
+  transition-duration: 0.3s;
 }
 .resume .func .skills-soft ul li:hover span,
 .resume .func .skills-soft ul li:hover small {

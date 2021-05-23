@@ -13,16 +13,11 @@ class SkillBar extends React.Component {
     }
 
     render() {
-        const style = {
-            width: `${this.props.percent}%`,
-            transitionDuration: '0.5s'
-        };
-
         return (
             <li>
                 <span>{this.props.name}</span>
                 <div className="skills-bar">
-                    <div className="bar" ref={this.barRef} style={style}></div>
+                    <div className="bar" ref={this.barRef} style={{ width: `${this.props.percent}%` }}></div>
                 </div>
             </li>
         );

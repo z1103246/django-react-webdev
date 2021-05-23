@@ -17,8 +17,6 @@ class SkillBar extends React.Component {
         this.cbarRef.current.animate(
             [{ strokeDashoffset: c }, { strokeDashoffset: cbar }], { duration: 1000, easing: 'linear' }
         );
-
-        this.cbarRef.current.style.transitionDuration = '0.3s';
     }
 
     render() {
