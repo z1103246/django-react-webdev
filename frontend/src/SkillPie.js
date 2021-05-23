@@ -4,7 +4,9 @@ class SkillBar extends React.Component {
     constructor(props) {
         super(props);
         this.cbarRef = React.createRef();
-        this.smallRef = React.createRef();
+        this.state = {
+            percent: 0
+        };
     }
 
     componentDidMount() {
@@ -16,6 +18,20 @@ class SkillBar extends React.Component {
 
         this.cbarRef.current.animate(
             [{ strokeDashoffset: c }, { strokeDashoffset: cbar }], { duration: 1000, easing: 'linear' }
+        );
+
+        var current = 0;
+        var counter = setInterval(
+            () => {
+                current += 1;
+                this.setState({
+                    percent: current
+                });
+
+                if (current === this.props.percent) {
+                    clearInterval(counter);
+                }
+            }, 10
         );
     }
 
@@ -32,7 +48,7 @@ class SkillBar extends React.Component {
                     <circle className="cbar" cx="50" cy="50" r={r} strokeDashoffset={cbar} strokeDasharray={c} ref={this.cbarRef}></circle>
                 </svg>
                 <span>{this.props.name}</span>
-                <small ref={this.smallRef}>{`${this.props.percent}%`}</small>
+                <small>{`${this.state.percent}%`}</small>
             </li>
         );
     }
