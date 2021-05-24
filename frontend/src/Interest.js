@@ -4,10 +4,10 @@ class Interest extends React.Component {
     render(){
         return (
             <div className="interests-items">
-                <h3>
-                    <i className={`fa fa-${this.props.faIcon}`}></i>
+                <i className={`fa fa-${this.props.faIcon}`}></i>
+                <span>
                     {this.props.name}
-                </h3>
+                </span>
             </div>
         );
     };
