@@ -1,5 +1,6 @@
 import React from 'react';
 import ExpBlock from './ExpBlock';
+import InterestBlock from './InterestBlock';
 import SkillBarBlock from './SkillBarBlock';
 import SkillPieBlock from './SkillPieBlock';
 
@@ -10,6 +11,7 @@ class Resume extends React.Component {
         );
         const skillBarBlock = <SkillBarBlock skillBarBlock={this.props.skillBarBlock} />;
         const skillPieBlock = <SkillPieBlock skillPieBlock={this.props.skillPieBlock} />;
+        const interestBlock = <InterestBlock interestBlock={this.props.interestBlock}/>;
 
         return (
             <div className="resume">
@@ -19,6 +21,7 @@ class Resume extends React.Component {
                     {expBlocks}
                     {skillBarBlock}
                     {skillPieBlock}
+                    {interestBlock}
                 </div>
             </div>
         );

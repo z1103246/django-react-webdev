@@ -47,13 +47,25 @@ const skillPieBlock = {
         { percent: 70, name: 'Python' },
         { percent: 95, name: 'React' }
     ],
-    faIcon: 'keyboard',
+    faIcon: 'keyboard-o',
     name: 'Software Skills'
+};
+
+const interestBlock = {
+    interest_items: [
+        { name: 'Art', faIcon: 'fas fa-palette'},
+        { name: 'Books', faIcon: 'book'},
+        { name: 'Movies', faIcon: 'film'},
+        { name: 'Music', faIcon: 'headphones'},
+        { name: 'Games', faIcon: 'gamepad'}
+    ],
+    name: 'Interests',
+    faIcon: 'star'
 };
 
 ReactDOM.render(
     <React.StrictMode>
-        <Resume expBlocks={expBlocks} skillBarBlock={skillBarBlock} skillPieBlock={skillPieBlock} />
+        <Resume expBlocks={expBlocks} skillBarBlock={skillBarBlock} skillPieBlock={skillPieBlock} interestBlock={interestBlock} />
     </React.StrictMode>,
     document.getElementById('root')
 );
