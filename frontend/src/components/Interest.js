@@ -1,9 +1,9 @@
 import React from 'react';
 
 class Interest extends React.Component {
-    render(){
+    render() {
         return (
-            <div className="interests-items">
+            <div>
                 <i className={`fa fa-${this.props.faIcon}`}></i>
                 <span>
                     {this.props.name}

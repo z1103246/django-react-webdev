@@ -8,9 +8,7 @@ class ListBlock extends React.Component {
                     <i className={`fa fa-${this.props.faIcon}`}></i>
                     {this.props.name}
                 </h3>
-                <ul>
-                    {this.props.children}
-                </ul>
+                {this.props.children}
             </div>
         );
     }

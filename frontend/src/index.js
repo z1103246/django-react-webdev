@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './resume.scss';
 
-import Resume from './Resume';
-import ListBlock from './ListBlock'
-import SkillBar from './SkillBar';
-import SkillPie from './SkillPie';
-import ExpList from './ExpList';
+import Resume from './components/Resume';
+import ListBlock from './components/ListBlock'
+import SkillBar from './components/SkillBar';
+import SkillPie from './components/SkillPie';
+import ExpList from './components/ExpList';
+import Interest from './components/Interest';
 
 const expBlocks = [
     {
@@ -57,23 +58,20 @@ const skillPieBlock = {
     name: 'Software Skills'
 };
 
-<<<<<<< HEAD
 const interestBlock = {
-    interest_items: [
-        { name: 'Art', faIcon: 'fas fa-palette'},
-        { name: 'Books', faIcon: 'book'},
-        { name: 'Movies', faIcon: 'film'},
-        { name: 'Music', faIcon: 'headphones'},
-        { name: 'Games', faIcon: 'gamepad'}
+    className: 'interests',
+    interestItems: [
+        { name: 'Art', faIcon: 'fas fa-palette' },
+        { name: 'Books', faIcon: 'book' },
+        { name: 'Movies', faIcon: 'film' },
+        { name: 'Music', faIcon: 'headphones' },
+        { name: 'Games', faIcon: 'gamepad' }
     ],
     name: 'Interests',
     faIcon: 'star'
 };
 
-ReactDOM.render(
-    <React.StrictMode>
-        <Resume expBlocks={expBlocks} skillBarBlock={skillBarBlock} skillPieBlock={skillPieBlock} interestBlock={interestBlock} />
-=======
+
 const expBlocksElem = expBlocks.map((expBlock) =>
     <ListBlock className={expBlock.className} name={expBlock.name} faIcon={expBlock.faIcon} >
         <ExpList experience={expBlock.experience} />
@@ -82,21 +80,37 @@ const expBlocksElem = expBlocks.map((expBlock) =>
 
 const skillBarBlockElem = (
     <ListBlock className={skillBarBlock.className} name={skillBarBlock.name} faIcon={skillBarBlock.faIcon} >
-        {
-            skillBarBlock.skillBars.map((skillBar) =>
-                <SkillBar percent={skillBar.percent} name={skillBar.name} />
-            )
-        }
+        <ul>
+            {
+                skillBarBlock.skillBars.map((skillBar) =>
+                    <SkillBar percent={skillBar.percent} name={skillBar.name} />
+                )
+            }
+        </ul>
     </ListBlock>
 );
 
 const skillPieBlockElem = (
     <ListBlock className={skillPieBlock.className} name={skillPieBlock.name} faIcon={skillPieBlock.faIcon} >
-        {
-            skillPieBlock.skillPies.map((skillPie) =>
-                <SkillPie percent={skillPie.percent} name={skillPie.name} />
-            )
-        }
+        <ul>
+            {
+                skillPieBlock.skillPies.map((skillPie) =>
+                    <SkillPie percent={skillPie.percent} name={skillPie.name} />
+                )
+            }
+        </ul>
+    </ListBlock>
+);
+
+const interestBlockElem = (
+    <ListBlock className={interestBlock.className} name={interestBlock.name} faIcon={interestBlock.faIcon}>
+        <div className="interests-items">
+            {
+                interestBlock.interestItems.map((interest) =>
+                    <Interest name={interest.name} faIcon={interest.faIcon} />
+                )
+            }
+        </div>
     </ListBlock>
 );
 
@@ -106,8 +120,8 @@ ReactDOM.render(
             {expBlocksElem}
             {skillBarBlockElem}
             {skillPieBlockElem}
+            {interestBlockElem}
         </Resume>
->>>>>>> 5a51ded3b014fc1882289664f2aa22292d5dde01
     </React.StrictMode>,
     document.getElementById('root')
 );
