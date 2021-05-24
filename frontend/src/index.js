@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './resume.scss';
 
 import Resume from './Resume';
+import ListBlock from './ListBlock'
+import SkillBar from './SkillBar';
+import SkillPie from './SkillPie';
+import ExpList from './ExpList';
 
 const expBlocks = [
     {
@@ -28,6 +32,7 @@ const expBlocks = [
 ];
 
 const skillBarBlock = {
+    className: 'skills-prog',
     skillBars: [
         { percent: 95, name: 'React' },
         { percent: 15, name: 'Erlang' },
@@ -41,6 +46,7 @@ const skillBarBlock = {
 };
 
 const skillPieBlock = {
+    className: 'skills-soft',
     skillPies: [
         { percent: 50, name: 'React' },
         { percent: 60, name: 'Erlang' },
@@ -51,9 +57,39 @@ const skillPieBlock = {
     name: 'Software Skills'
 };
 
+const expBlocksElem = expBlocks.map((expBlock) =>
+    <ListBlock className={expBlock.className} name={expBlock.name} faIcon={expBlock.faIcon} >
+        <ExpList experience={expBlock.experience} />
+    </ListBlock>
+);
+
+const skillBarBlockElem = (
+    <ListBlock className={skillBarBlock.className} name={skillBarBlock.name} faIcon={skillBarBlock.faIcon} >
+        {
+            skillBarBlock.skillBars.map((skillBar) =>
+                <SkillBar percent={skillBar.percent} name={skillBar.name} />
+            )
+        }
+    </ListBlock>
+);
+
+const skillPieBlockElem = (
+    <ListBlock className={skillPieBlock.className} name={skillPieBlock.name} faIcon={skillPieBlock.faIcon} >
+        {
+            skillPieBlock.skillPies.map((skillPie) =>
+                <SkillPie percent={skillPie.percent} name={skillPie.name} />
+            )
+        }
+    </ListBlock>
+);
+
 ReactDOM.render(
     <React.StrictMode>
-        <Resume expBlocks={expBlocks} skillBarBlock={skillBarBlock} skillPieBlock={skillPieBlock} />
+        <Resume>
+            {expBlocksElem}
+            {skillBarBlockElem}
+            {skillPieBlockElem}
+        </Resume>
     </React.StrictMode>,
     document.getElementById('root')
 );
