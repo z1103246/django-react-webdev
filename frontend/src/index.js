@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './resume.scss';
 
 import Resume from './components/Resume';
-import ListBlock from './components/ListBlock'
+import Block from './components/Block'
 import SkillBar from './components/SkillBar';
 import SkillPie from './components/SkillPie';
 import ExpList from './components/ExpList';
@@ -73,13 +73,13 @@ const interestBlock = {
 
 
 const expBlocksElem = expBlocks.map((expBlock) =>
-    <ListBlock className={expBlock.className} name={expBlock.name} faIcon={expBlock.faIcon} >
+    <Block className={expBlock.className} name={expBlock.name} faIcon={expBlock.faIcon} >
         <ExpList experience={expBlock.experience} />
-    </ListBlock>
+    </Block>
 );
 
 const skillBarBlockElem = (
-    <ListBlock className={skillBarBlock.className} name={skillBarBlock.name} faIcon={skillBarBlock.faIcon} >
+    <Block className={skillBarBlock.className} name={skillBarBlock.name} faIcon={skillBarBlock.faIcon} >
         <ul>
             {
                 skillBarBlock.skillBars.map((skillBar) =>
@@ -87,11 +87,11 @@ const skillBarBlockElem = (
                 )
             }
         </ul>
-    </ListBlock>
+    </Block>
 );
 
 const skillPieBlockElem = (
-    <ListBlock className={skillPieBlock.className} name={skillPieBlock.name} faIcon={skillPieBlock.faIcon} >
+    <Block className={skillPieBlock.className} name={skillPieBlock.name} faIcon={skillPieBlock.faIcon} >
         <ul>
             {
                 skillPieBlock.skillPies.map((skillPie) =>
@@ -99,11 +99,11 @@ const skillPieBlockElem = (
                 )
             }
         </ul>
-    </ListBlock>
+    </Block>
 );
 
 const interestBlockElem = (
-    <ListBlock className={interestBlock.className} name={interestBlock.name} faIcon={interestBlock.faIcon}>
+    <Block className={interestBlock.className} name={interestBlock.name} faIcon={interestBlock.faIcon}>
         <div className="interests-items">
             {
                 interestBlock.interestItems.map((interest) =>
@@ -111,7 +111,7 @@ const interestBlockElem = (
                 )
             }
         </div>
-    </ListBlock>
+    </Block>
 );
 
 ReactDOM.render(

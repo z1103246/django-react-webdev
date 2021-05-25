@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ListBlock = (props) => (
+const Block = (props) => (
     <div className={props.className}>
         <h3>
             <i className={`fa fa-${props.faIcon}`}></i>
@@ -10,4 +10,4 @@ const ListBlock = (props) => (
     </div>
 );
 
-export default ListBlock;
+export default Block;
