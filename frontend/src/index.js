@@ -72,8 +72,8 @@ const interestBlock = {
 };
 
 
-const expBlocksElem = expBlocks.map((expBlock) =>
-    <Block className={expBlock.className} name={expBlock.name} faIcon={expBlock.faIcon} >
+const expBlocksElem = expBlocks.map((expBlock, index) =>
+    <Block className={expBlock.className} name={expBlock.name} faIcon={expBlock.faIcon} key={index} >
         <ExpList experience={expBlock.experience} />
     </Block>
 );
@@ -82,8 +82,8 @@ const skillBarBlockElem = (
     <Block className={skillBarBlock.className} name={skillBarBlock.name} faIcon={skillBarBlock.faIcon} >
         <ul>
             {
-                skillBarBlock.skillBars.map((skillBar) =>
-                    <SkillBar percent={skillBar.percent} name={skillBar.name} />
+                skillBarBlock.skillBars.map((skillBar, index) =>
+                    <SkillBar percent={skillBar.percent} name={skillBar.name} key={index} />
                 )
             }
         </ul>
@@ -94,8 +94,8 @@ const skillPieBlockElem = (
     <Block className={skillPieBlock.className} name={skillPieBlock.name} faIcon={skillPieBlock.faIcon} >
         <ul>
             {
-                skillPieBlock.skillPies.map((skillPie) =>
-                    <SkillPie percent={skillPie.percent} name={skillPie.name} />
+                skillPieBlock.skillPies.map((skillPie, index) =>
+                    <SkillPie percent={skillPie.percent} name={skillPie.name} key={index} />
                 )
             }
         </ul>
@@ -106,8 +106,8 @@ const interestBlockElem = (
     <Block className={interestBlock.className} name={interestBlock.name} faIcon={interestBlock.faIcon}>
         <div className="interests-items">
             {
-                interestBlock.interestItems.map((interest) =>
-                    <Interest name={interest.name} faIcon={interest.faIcon} />
+                interestBlock.interestItems.map((interest, index) =>
+                    <Interest name={interest.name} faIcon={interest.faIcon} key={index} />
                 )
             }
         </div>
