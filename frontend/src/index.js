@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Resume from './components/Resume';
 import Block from './components/Block'
 import SkillBar from './components/SkillBar';
 import SkillPie from './components/SkillPie';
@@ -119,12 +118,16 @@ const interestBlockElem = (
 
 ReactDOM.render(
     <React.StrictMode>
-        <Resume>
-            {expBlocksElem}
-            {skillBarBlockElem}
-            {skillPieBlockElem}
-            {interestBlockElem}
-        </Resume>
+        <div className="resume">
+            <div className="base">
+            </div>
+            <div className="func">
+                {expBlocksElem}
+                {skillBarBlockElem}
+                {skillPieBlockElem}
+                {interestBlockElem}
+            </div>
+        </div>
     </React.StrictMode>,
     document.getElementById('root')
 );
