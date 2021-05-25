@@ -1,16 +1,12 @@
 import React from 'react';
 
-class Interest extends React.Component {
-    render() {
-        return (
-            <div>
-                <i className={`fa fa-${this.props.faIcon}`}></i>
-                <span>
-                    {this.props.name}
-                </span>
-            </div>
-        );
-    };
-}
+const Interest = (props) => (
+    <div>
+        <i className={`fa fa-${props.faIcon}`}></i>
+        <span>
+            {props.name}
+        </span>
+    </div>
+);
 
 export default Interest;
