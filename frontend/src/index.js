@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './resume.scss';
 
 import Resume from './components/Resume';
 import Block from './components/Block'
@@ -8,6 +7,10 @@ import SkillBar from './components/SkillBar';
 import SkillPie from './components/SkillPie';
 import ExpList from './components/ExpList';
 import Interest from './components/Interest';
+
+import { nanoid } from 'nanoid';
+
+import './resume.scss';
 
 const expBlocks = [
     {
@@ -72,8 +75,8 @@ const interestBlock = {
 };
 
 
-const expBlocksElem = expBlocks.map((expBlock, index) =>
-    <Block className={expBlock.className} name={expBlock.name} faIcon={expBlock.faIcon} key={index} >
+const expBlocksElem = expBlocks.map((expBlock) =>
+    <Block className={expBlock.className} name={expBlock.name} faIcon={expBlock.faIcon} key={nanoid()} >
         <ExpList experience={expBlock.experience} />
     </Block>
 );
@@ -82,8 +85,8 @@ const skillBarBlockElem = (
     <Block className={skillBarBlock.className} name={skillBarBlock.name} faIcon={skillBarBlock.faIcon} >
         <ul>
             {
-                skillBarBlock.skillBars.map((skillBar, index) =>
-                    <SkillBar percent={skillBar.percent} name={skillBar.name} key={index} />
+                skillBarBlock.skillBars.map((skillBar) =>
+                    <SkillBar percent={skillBar.percent} name={skillBar.name} key={nanoid()} />
                 )
             }
         </ul>
@@ -94,8 +97,8 @@ const skillPieBlockElem = (
     <Block className={skillPieBlock.className} name={skillPieBlock.name} faIcon={skillPieBlock.faIcon} >
         <ul>
             {
-                skillPieBlock.skillPies.map((skillPie, index) =>
-                    <SkillPie percent={skillPie.percent} name={skillPie.name} key={index} />
+                skillPieBlock.skillPies.map((skillPie) =>
+                    <SkillPie percent={skillPie.percent} name={skillPie.name} key={nanoid()} />
                 )
             }
         </ul>
@@ -106,8 +109,8 @@ const interestBlockElem = (
     <Block className={interestBlock.className} name={interestBlock.name} faIcon={interestBlock.faIcon}>
         <div className="interests-items">
             {
-                interestBlock.interestItems.map((interest, index) =>
-                    <Interest name={interest.name} faIcon={interest.faIcon} key={index} />
+                interestBlock.interestItems.map((interest) =>
+                    <Interest name={interest.name} faIcon={interest.faIcon} key={nanoid()} />
                 )
             }
         </div>
