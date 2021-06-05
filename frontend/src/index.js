@@ -116,10 +116,51 @@ const interestBlockElem = (
     </Block>
 );
 
+const profileBlocks = [
+    {
+        className: 'photo',
+        faIcon: 'coffee'
+    },
+    {
+        className: 'info',
+        name: 'Daniel Kim',
+        job: 'Freelance Consultant'
+    }
+];
+
+const aboutBlock = {
+    className: 'about',
+
+    text: 'I\'m a freelance consultant for Upwork, specializing in backend development,\
+            formal verification, and research mathematics. Experienced with Python, Java, C/C++, Rust, \
+            theorem provers (e.g., Arend), and technical writing.',
+}
+
+const contactBlock = {
+    className: 'contact',
+
+    lines: [
+        { faIcon:'phone', text:'(480) 717-0165', href:''},
+        { faIcon: 'envelope', text:'ddk576@utexas.edu', href:''},
+        { faIcon: 'home', text:'', href:''}
+    ],
+
+};
+
+const followBlock = {
+
+};
+
+
+
 ReactDOM.render(
     <React.StrictMode>
         <div className="resume">
             <div className="base">
+                {profileBlockElem}
+                {aboutBlockElem}
+                {contactBlockElem}
+                {followBlockElem}
             </div>
             <div className="func">
                 {expBlocksElem}
