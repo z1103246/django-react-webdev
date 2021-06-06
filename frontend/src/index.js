@@ -29,7 +29,7 @@ const expBlocks = [
         name: 'Education',
         experience: [
             { title: 'Bachelor of Science in Computer Science, Mathematics', institution: 'University of Texas at Austin', duration: 'Aug 2018 - Now' },
-            { title: 'Advanced Diploma', institution:'The Texas Academy of Mathematics and Science', duration:'August 2016 - May 2018'}
+            { title: 'Advanced Diploma', institution: 'The Texas Academy of Mathematics and Science', duration: 'August 2016 - May 2018' }
         ]
     }
 ];
@@ -116,17 +116,11 @@ const interestBlockElem = (
     </Block>
 );
 
-const profileBlocks = [
-    {
-        className: 'photo',
-        faIcon: 'coffee'
-    },
-    {
-        className: 'info',
-        name: 'Daniel Kim',
-        job: 'Freelance Consultant'
-    }
-];
+const profileBlock = {
+    faIcon: 'coffee',
+    name: 'Daniel Kim',
+    job: 'Freelance Consultant'
+};
 
 const aboutBlock = {
     className: 'about',
@@ -140,9 +134,9 @@ const contactBlock = {
     className: 'contact',
 
     lines: [
-        { faIcon:'phone', text:'(480) 717-0165', href:''},
-        { faIcon: 'envelope', text:'ddk576@utexas.edu', href:''},
-        { faIcon: 'home', text:'', href:''}
+        { faIcon: 'phone', text: '(480) 717-0165', href: '' },
+        { faIcon: 'envelope', text: 'ddk576@utexas.edu', href: '' },
+        { faIcon: 'home', text: '', href: '' }
     ],
 
 };
@@ -152,15 +146,7 @@ const followBlock = {
 };
 
 const profileBlockElem = (
-    <div className='profile'>
-        {
-            profileBlocks.map((profileBlock) =>
-                <Profile className={profileBlock.classname} name={profileBlock.name} 
-                    faIcon={profileBlock.faIcon} job={profileBlock.job}>
-                </Profile>
-            )
-        }
-    </div>
+    <Profile faIcon={profileBlock.faIcon} name={profileBlock.name} job={profileBlock.job} />
 );
 
 const aboutBlockElem = {
