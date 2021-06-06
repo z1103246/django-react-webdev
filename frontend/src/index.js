@@ -6,6 +6,7 @@ import SkillBar from './components/SkillBar';
 import SkillPie from './components/SkillPie';
 import ExpList from './components/ExpList';
 import Interest from './components/Interest';
+import Profile from './components/Profile';
 
 import { nanoid } from 'nanoid';
 
@@ -17,9 +18,9 @@ const expBlocks = [
         faIcon: 'briefcase',
         name: 'Experience',
         experience: [
-            { title: 'Technical Consultant', institution: 'Prudential', duration: 'Apr 2018 - Now' },
-            { title: 'Frontend Engineer', institution: 'NeuraFlash', duration: 'Apr 2018 - Now' },
-            { title: 'Backend Engineer', institution: 'PANYNJ', duration: 'Apr 2018 - Now' }
+            { title: 'Freelance Consultant', institution: 'Upwork', duration: 'Apr 2021 - Now' },
+            { title: 'Software Intern', institution: 'Bilingual Annotations Task Force', duration: 'Aug 2018 - Jan 2019' },
+            { title: 'Research Intern', institution: 'University of Texas at Dallas', duration: 'March 2016 - Apr 2019' }
         ]
     },
     {
@@ -27,9 +28,8 @@ const expBlocks = [
         faIcon: 'graduation-cap',
         name: 'Education',
         experience: [
-            { title: 'Technical Consultant', institution: 'Prudential', duration: 'Apr 2018 - Now' },
-            { title: 'Frontend Engineer', institution: 'NeuraFlash', duration: 'Apr 2018 - Now' },
-            { title: 'Backend Engineer', institution: 'PANYNJ', duration: 'Apr 2018 - Now' }
+            { title: 'Bachelor of Science in Computer Science, Mathematics', institution: 'University of Texas at Austin', duration: 'Aug 2018 - Now' },
+            { title: 'Advanced Diploma', institution:'The Texas Academy of Mathematics and Science', duration:'August 2016 - May 2018'}
         ]
     }
 ];
@@ -131,7 +131,7 @@ const profileBlocks = [
 const aboutBlock = {
     className: 'about',
 
-    text: 'I\'m a freelance consultant for Upwork, specializing in backend development,\
+    text: 'I\'m a freelance consultant on Upwork, specializing in backend development,\
             formal verification, and research mathematics. Experienced with Python, Java, C/C++, Rust, \
             theorem provers (e.g., Arend), and technical writing.',
 }
@@ -151,16 +151,38 @@ const followBlock = {
 
 };
 
+const profileBlockElem = (
+    <div className='profile'>
+        {
+            profileBlocks.map((profileBlock) =>
+                <Profile className={profileBlock.classname} name={profileBlock.name} 
+                    faIcon={profileBlock.faIcon} job={profileBlock.job}>
+                </Profile>
+            )
+        }
+    </div>
+);
 
+const aboutBlockElem = {
+
+};
+
+const contactBlockElem = {
+
+};
+
+const followBlockElem = {
+
+};
 
 ReactDOM.render(
     <React.StrictMode>
         <div className="resume">
             <div className="base">
                 {profileBlockElem}
-                {aboutBlockElem}
+                {/*{aboutBlockElem}
                 {contactBlockElem}
-                {followBlockElem}
+                {followBlockElem} */}
             </div>
             <div className="func">
                 {expBlocksElem}
